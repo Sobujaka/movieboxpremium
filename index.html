@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Box Premium - Download Center</title>
+    <style>
+        /* Base Reset & Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        /* Header Layout - Fixed overlapping issue */
+        .header-section {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff3366, #ff6699, #9933ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .sub-title {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Card Layout Container */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Individual Card Box */
+        .card {
+            background: #161f30;
+            border: 1px solid #232f48;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 360px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        /* Image Box - Large View */
+        .image-box {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #0d131e;
+            margin-bottom: 20px;
+            border: 1px solid #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Card Content */
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        /* Helper Text & Buttons */
+        .instruction-text {
+            font-size: 0.8rem;
+            color: #38bdf8;
+            text-align: center;
+            margin-bottom: 10px;
+            min-height: 20px;
+            font-weight: 500;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #ef4444, #ec4899);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+        }
+
+        .download-btn:hover {
+            opacity: 0.95;
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+        }
+
+        .download-btn.unlocked {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .download-btn.waiting {
+            background: #334155;
+            cursor: wait;
+            box-shadow: none;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #64748b;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <h1 class="main-title">Movie Box Premium</h1>
+        <p class="sub-title">আপনার পছন্দের ডিভাইসটি নির্বাচন করুন। ১০ সেকেন্ডের টাইমার শেষ হলে দ্বিতীয় ডাউনলোড লিঙ্কটি আনলক হবে।</p>
+    </header>
+
+    <!-- 3 Box Container -->
+    <main class="cards-container">
+
+        <!-- BOX 1: Android -->
+        <div class="card" 
+             data-link1="https://example.com/android-link1" 
+             data-link2="https://example.com/android-link2">
+            
+            <div class="image-box">
+                <!-- এখানে আপনার ছবির লিঙ্ক বসান -->
+                <img src="https://image.winudf.com/v2/image1/Y29tLmNlbnRhdXJ1cy5tb3Jhc19iYW5uZXJfMTczMjk1MDYzNV8wNDg/banner.jpg?fakeurl=1&w=1200" alt="Movie Box Premium for Android">
+            </div>
+            
+            <h2 class="card-title">Movie Box Premium for Android</h2>
+            <p class="card-desc">অ্যান্ড্রয়েড স্মার্টফোন এবং ট্যাবলেটের জন্য দ্রুত ও সেরা ভিডিও স্ট্রিমিং অ্যাপ।</p>
+            
+            <div class="instruction-text">ডাউনলোড করতে নিচের বাটনে ক্লিক করুন</div>
+            <button class="download-btn">UNLOCK DOWNLOAD LINK</button>
+        </div>
+
+        <!-- BOX 2: TV -->
+        <div class="card" 
+             data-link1="https://example.com/tv-link1" 
+             data-link2="https://example.com/tv-link2">
+            
+            <div class="image-box">
+                <!-- এখানে আপনার ছবির লিঙ্ক বসান -->
+                <img src="https://i.pinimg.com/originals/7d/2c/ee/7d2ceec709f09efe803e970d1b9a4d54.jpg" alt="Movie Box Premium for TV">
+            </div>
+            
+            <h2 class="card-title">Movie Box Premium for TV</h2>
+            <p class="card-desc">স্মার্ট টিভি, অ্যান্ড্রয়েড টিভি বক্স এবং ফায়ারস্টিকের জন্য স্পেশাল ইউজার ইন্টারফেস।</p>
+            
+            <div class="instruction-text">ডাউনলোড করতে নিচের বাটনে ক্লিক করুন</div>
+            <button class="download-btn">UNLOCK DOWNLOAD LINK</button>
+        </div>
+
+        <!-- BOX 3: PC -->
+        <div class="card" 
+             data-link1="https://example.com/pc-link1" 
+             data-link2="https://example.com/pc-link2">
+            
+            <div class="image-box">
+                <!-- এখানে আপনার ছবির লিঙ্ক বসান -->
+                <img src="https://pbs.twimg.com/media/G__qAjgXMAAfvKp.jpg" alt="Movie Box Premium for PC">
+            </div>
+            
+            <h2 class="card-title">Movie Box Premium for PC</h2>
+            <p class="card-desc">পিসির জন্য ৪কে ভিডিও প্লেয়ার, ফাস্ট ডাউনলোড এবং সাবটাইটেল সাপোর্ট।</p>
+            
+            <div class="instruction-text">ডাউনলোড করতে নিচের বাটনে ক্লিক করুন</div>
+            <button class="download-btn">UNLOCK DOWNLOAD LINK</button>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Movie Box Premium. All rights reserved.
+    </footer>
+
+    <!-- Countdown & Multi-Tab Script -->
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            const btn = card.querySelector('.download-btn');
+            const statusText = card.querySelector('.instruction-text');
+            const link1 = card.getAttribute('data-link1');
+            const link2 = card.getAttribute('data-link2');
+
+            let timerId = null;
+            let secondsRemaining = 10;
+            let step = 1; // 1: First click pending, 2: Counting down 10s, 3: Second link unlocked
+
+            btn.addEventListener('click', () => {
+                if (step === 1) {
+                    // Open First Link in New Tab
+                    window.open(link1, '_blank');
+                    
+                    // Change State
+                    step = 2;
+                    secondsRemaining = 10;
+                    btn.classList.add('waiting');
+                    btn.innerText = `WAIT ${secondsRemaining} SECONDS...`;
+                    statusText.innerText = "নতুন ট্যাবে ১০ সেকেন্ড থাকুন...";
+
+                    // Start Timer
+                    timerId = setInterval(() => {
+                        secondsRemaining--;
+                        if (secondsRemaining > 0) {
+                            btn.innerText = `WAIT ${secondsRemaining} SECONDS...`;
+                        } else {
+                            // 10 Seconds Completed Successfully
+                            clearInterval(timerId);
+                            step = 3;
+                            btn.classList.remove('waiting');
+                            btn.classList.add('unlocked');
+                            btn.innerText = "DOWNLOAD NOW (LINK 2)";
+                            statusText.innerText = "লিঙ্ক আনলক হয়েছে! এখন ডাউনলোড করুন।";
+                        }
+                    }, 1000);
+
+                } else if (step === 2) {
+                    // Clicked while waiting
+                    alert(`অনুগ্রহ করে অপেক্ষা করুন! আরও ${secondsRemaining} সেকেন্ড পর লিঙ্কটি আনলক হবে।`);
+                } else if (step === 3) {
+                    // Open Second Link
+                    window.open(link2, '_blank');
+                }
+            });
+
+            // Tab Switch Check - Reset if user comes back before 10s completes
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible' && step === 2) {
+                    if (secondsRemaining > 0) {
+                        // Returned prematurely -> Reset Timer
+                        clearInterval(timerId);
+                        step = 1;
+                        btn.classList.remove('waiting');
+                        btn.innerText = "UNLOCK DOWNLOAD LINK";
+                        statusText.innerText = "১০ সেকেন্ড সময় সম্পূর্ণ না হওয়ায় আবার চেষ্টা করুন!";
+                        alert("১০ সেকেন্ড সময় শেষ হওয়ার আগেই ফিরে এসেছেন! অনুগ্রহ করে নতুন ট্যাবে ১০ সেকেন্ড অবস্থান করুন।");
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
