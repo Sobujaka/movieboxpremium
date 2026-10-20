@@ -22,19 +22,34 @@
             padding: 20px;
         }
 
-        /* কার্ডের মূল কনটেইনার বা বড় বক্স */
+        /* Main Container for Side-by-Side Grid Layout */
+        .main-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            align-items: stretch;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Card Container */
         .card-container {
             background-color: #1e293b;
             border-radius: 16px;
             padding: 25px;
+            flex: 1;
+            min-width: 320px;
             max-width: 480px;
-            width: 100%;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        /* উপরের লেখাটি */
+        /* Title Style */
         .title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -45,7 +60,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* ছবির ফ্রেম বা ইমেজের বক্স */
+        /* Image Box */
         .image-box {
             width: 100%;
             height: 280px;
@@ -69,7 +84,7 @@
             transform: scale(1.05);
         }
 
-        /* ডাউনলোড বাটন */
+        /* Download Button */
         .download-btn {
             display: inline-block;
             width: 100%;
@@ -93,23 +108,62 @@
         .download-btn:active {
             transform: translateY(0);
         }
+
+        /* Responsive Video Container */
+        .video-box {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .video-box iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body>
 
-    <div class="card-container">
-        <!-- ১. বক্সের উপরের লেখা -->
-        <h2 class="title">skip all ads for download movie premium mod for free</h2>
+    <div class="main-wrapper">
+        <!-- 1st Box: Download Card -->
+        <div class="card-container">
+            <h2 class="title">skip all ads for download movie premium mod for free</h2>
 
-        <!-- ২. লিংক থেকে ইমেজ লোড হওয়ার বক্স -->
-        <div class="image-box">
-            <img src="https://image.winudf.com/v2/image1/Y29tLmNlbnRhdXJ1cy5tb3Jhc19iYW5uZXJfMTczMjk1MDYzNV8wNDg/banner.jpg?fakeurl=1&w=1200" alt="Movie Poster">
+            <div class="image-box">
+                <img src="https://image.winudf.com/v2/image1/Y29tLmNlbnRhdXJ1cy5tb3Jhc19iYW5uZXJfMTczMjk1MDYzNV8wNDg/banner.jpg?fakeurl=1&w=1200" alt="Movie Poster">
+            </div>
+
+            <a href="YOUR_DOWNLOAD_LINK_HERE" class="download-btn" target="_blank">
+                📥 Download Now
+            </a>
         </div>
 
-        <!-- ৩. ডাউনলোড বাটন (এখানে নতুন ট্যাবে লিংক ওপেন হবে) -->
-        <a href="YOUR_DOWNLOAD_LINK_HERE" class="download-btn" target="_blank">
-            📥 Download Now
-        </a>
+        <!-- 2nd Box: YouTube Video Card (Dan Pasher Box) -->
+        <div class="card-container">
+            <h2 class="title">HOW TO DOWNLOAD APK</h2>
+
+            <div class="video-box">
+                <!-- YouTube Video Embed (Apnar Video ID-ti 'dQw4w9WgXcQ' er jaigay boshan) -->
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="How to download APK" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Optional extra spacing/footer if needed -->
+            <div></div>
+        </div>
     </div>
 
 </body>
